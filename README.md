@@ -13,7 +13,7 @@ The tradional system of bids and tenders face many problems like:
 
 **Tendering Process Delays**: Bureaucratic inefficiencies and complex administrative procedures can significantly delay project initiation and completion.
 
-##Solutions##
+##Solutions
 
 Cost Overruns: Smart contracts automate payments and release funds only when predefined milestones are met, reducing the risk of cost overruns.
 
@@ -26,7 +26,7 @@ Enforcement of Contracts: Smart contracts enforce terms automatically, ensuring 
 Tendering Process Delays: Blockchain streamlines administrative processes and document management, significantly reducing delays in the tendering process.
 
 
-###Tech Stack###
+###Tech Stack
 
 **Blockchain Platform: Ethereum**
 
