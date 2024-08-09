@@ -11,8 +11,8 @@ function App() {
     <div className="App">
       <Routes>
       <Route path="/" element={<Layout/>}>
-       <Route index element={<Home/>}/>
-       <Route path='/choose' element={<Choose/>}/>
+       <Route path="/home" element={<Home/>}/>
+       <Route index element={<Choose/>}/>
        <Route path='/applyTander' element={<Applytender/>}/>
       </Route>
       {/* <Route path='/login' element={<LoginWithMetaMask/>}/> */}
