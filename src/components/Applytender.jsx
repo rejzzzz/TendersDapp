@@ -1,5 +1,6 @@
 import { useState } from "react";
 import '../css/error&success.css'
+import '../css/applytender.css'
 
 export const Applytender=()=>{
     const [error,setError]=useState()
