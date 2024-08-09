@@ -1,0 +1,99 @@
+/* Apply a consistent box-sizing model for all elements */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Set full viewport height and width for root elements */
+  html, body, #root {
+    height: 100%;
+    width: 100%;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased; /* Enhanced font rendering for WebKit browsers */
+    -moz-osx-font-smoothing: grayscale; /* Enhanced font rendering for Firefox on macOS */
+    background-color: #000000; /* Light background color for the page */
+    color: #ffffff; /* Dark text color for better readability */
+    line-height: 1.6; /* Improved line spacing for better readability */
+  }
+  
+  /* Styling for code elements */
+  code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+    background-color: #000000; /* Light background for code snippets */
+    border-radius: 4px; /* Rounded corners for code blocks */
+    padding: 0.2rem 0.4rem; /* Padding around code snippets */
+    color: #d63384; /* Color to make code stand out */
+    font-size: 0.95rem; /* Slightly smaller font size for code */
+  }
+  
+  /* Global link styling */
+  a {
+    color: #007bff; /* Primary color for links */
+    text-decoration: none; /* Remove underline from links */
+  }
+  
+  a:hover, a:focus {
+    text-decoration: underline; /* Add underline on hover/focus */
+  }
+  
+  /* Responsive text scaling */
+  h1, h2, h3, h4, h5, h6 {
+    margin-left: 2rem;
+    font-family: inherit; /* Ensure headings use the same font as body text */
+    line-height: 1.2; /* Tighter line height for headings */
+  }
+  
+  h1 {
+    font-size: 2.5rem; /* Large font size for main headings */
+    text-decoration: underline;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+  }
+  
+  h2 {
+    font-size: 2rem; /* Slightly smaller for secondary headings */
+    text-decoration: underline;
+
+    margin-bottom: 1rem;
+    margin-top: 2rem;
+  }
+  
+  h3 {
+    font-size: 1.75rem; /* Smaller for tertiary headings */
+    text-decoration: underline;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+  }
+  
+  h4 {
+    font-size: 1.5rem; /* Smaller for quaternary headings */
+    text-decoration: underline;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+  }
+  
+  h5 {
+    font-size: 1.25rem; /* Smaller for quinary headings */
+    text-decoration: underline;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+  }
+  
+  h6 {
+    font-size: 1rem; /* Smallest for senary headings */
+    text-decoration: underline;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+  }
+  
+  .about-content p{
+    margin-left: 2rem;
+    line-height: 1.5rem;
+  }
+  .key_feat
+  {
+    margin-left: 2rem;
+    line-height: 1.5rem;
+  }

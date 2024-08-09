@@ -1,48 +1,117 @@
+/* Container for the entire form */
 form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    width: 100%;
-    background-color:aliceblue
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  background-color: #1e1e1e; /* Dark background for the form */
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Slightly stronger shadow for depth */
+  border-radius: 8px; /* Rounded corners */
+  color: #e0e0e0; /* Light text color */
+}
 
+/* Container for each form group */
 .form-group {
-    width: 300px;
-    margin: 0 auto;
-    background-color:azure;
-  }
-  
-  .form-group {
-    margin-bottom: 15px;
-  }
-  
-  label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-  }
-  
-  input[type="text"], input[type="number"], input[type="date"] {
-    width: 100%;
-    padding: 8px;
-    margin: 0;
-    box-sizing: border-box;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: #45a049;
-  }
-  
+  width: 100%;
+  max-width: 500px; /* Increased max width for better readability */
+  margin-bottom: 20px;
+  background-color: #2c2c2c; /* Darker background for form groups */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Slight shadow for form groups */
+}
+
+/* Style for labels */
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 1.1rem; /* Slightly larger font size */
+  color: #e0e0e0; /* Light color for labels */
+  font-weight: 500;
+}
+
+/* Style for input fields */
+input[type="text"], 
+input[type="number"], 
+input[type="date"], 
+textarea {
+  width: 100%;
+  padding: 12px;
+  margin: 0;
+  box-sizing: border-box;
+  border: 1px solid #444; /* Darker border for inputs */
+  border-radius: 4px;
+  font-size: 1rem;
+  color: #e0e0e0; /* Light text color */
+  background-color: #333; /* Dark background for inputs */
+}
+
+/* Style for buttons */
+button {
+  background-color: #007BFF; /* Modern blue color */
+  color: white;
+  margin-bottom: 1rem;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+}
+
+/* Button hover effect */
+button:hover {
+  background-color: #0056b3; /* Darker blue color on hover */
+  transform: scale(1.05); /* Slightly increase button size on hover */
+}
+
+/* Style for error and success messages */
+#error {
+  color: #f44336; /* Red color for errors */
+  margin-bottom: 20px;
+  font-size: 1.2rem; /* Slightly larger font size for visibility */
+}
+
+#success {
+  color: #4caf50; /* Green color for success */
+  margin-bottom: 20px;
+  color: whitesmoke;
+  font-weight: bold;
+  font-size: 1.2rem; /* Slightly larger font size for visibility */
+}
+
+/* Milestone container styling */
+.milestone {
+  background-color: #333; /* Dark background for milestones */
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.milestone p {
+  margin: 5px 0;
+  color: #e0e0e0; /* Light color for milestone details */
+}
+
+.milestone button {
+  align-self: flex-end; /* Align the remove button to the end */
+  background-color: #f44336; /* Red color for remove button */
+  color: white;
+  margin-bottom: 2rem;
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-size: 0.9rem; /* Smaller font size for remove button */
+  transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.milestone button:hover {
+  background-color: #d32f2f; /* Darker red on hover */
+}

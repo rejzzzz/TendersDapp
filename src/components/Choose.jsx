@@ -4,7 +4,7 @@ import '../css/choose.css'
 export const Choose=()=>{
     const nav= useNavigate();
     
-    return( 
+    return(
         <div className="choose-container">
         <button onClick={async(e)=>{
             e.preventDefault();

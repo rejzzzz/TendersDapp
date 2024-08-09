@@ -5,25 +5,9 @@ import { ethers } from "ethers";
 
 export const Layout=()=>{
     const nav=useNavigate();
-//     const [choosVerified,setChoosverified]=useState(false);
-    
-//     useEffect(()=>{
-    //     const verification= async()=>{
-    //         try {
-    //             // await axios.get(`${process.env.REACT_APP_SERVER_URL}/choosing`,{withCredentials:true});
-
-    //             setChoosverified(true);
-    //         } catch (error) {
-    //             nav("/choose");
-    //         }
-    //     };
-    //     verification();
-    // },[nav]);
 
     useEffect(()=>{
         const verification= async()=>{
-        // await axios.get(`${process.env.REACT_APP_SERVER_URL}/verify`,{withCredentials:true});
-
             
       if (window.ethereum) {
         try {
@@ -45,8 +29,8 @@ export const Layout=()=>{
     <nav>
         <div className="logo">🏦</div>
         <Link to={'/'}>🏠Home</Link>
-        <Link>📱Contact US</Link>
-        <Link>📄About US</Link>
+        <Link to={'/contactUs'}>📱Contact US</Link>
+        <Link to={'/aboutProject'}>📄About Project</Link>
     </nav>
     <Outlet/>
     </>

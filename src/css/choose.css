@@ -1,27 +1,55 @@
-.choose-container{
+/* Container for choice buttons */
+.choose-container {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-image: url("../images/background.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
     height: 100%;
     width: 100%;
-    gap: 10px;
-    background-color:azure;
+    gap: 20px; /* Adjusted gap for better spacing */
+    background-color: #f8f9fa; /* Light background for a clean look */
+    padding: 40px; /* Increased padding for better spacing and emphasis */
+    border-radius: 12px; /* More rounded corners for a modern look */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Enhanced shadow for depth */
+    flex-direction: column; /* Stack buttons vertically for better layout on smaller screens */
 }
 
-.choose-container button{
-    padding: 10px 20px;
-    background-color: black;
+/* Style for buttons inside the choose-container */
+.choose-container button {
+    padding: 15px 30px; /* Increased padding for a more substantial button */
+    background-color: transparent; /* Modern blue background for buttons */
+    backdrop-filter: blur(30px);
     color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 18px;
+    box-shadow: 0 0 0 10px rgba(255,255,255,.2);
+    border: 2px solid rgba(255, 255, 255, .2); /* Blue border for buttons */
+    border-radius: 8px; /* Rounded corners for buttons */
+    font-size: 1.1rem; /* Larger font size for better readability */
     cursor: pointer;
-    font-weight: bold;
-    transition: .3s;
-    margin: 1rem;
+    font-weight: 600; /* Bolder text for better emphasis */
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+    margin: 0; /* Removed margin for consistent spacing */
+    text-transform: uppercase; /* Uppercase text for a more professional look */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Subtle shadow for buttons */
 }
 
-.choose-container button:hover{
-    background-color: skyblue;
-    color: white;
+/* Button hover effect */
+.choose-container button:hover {
+    background-color: #8b8b8b; /* Darker blue color on hover */
+    transform: scale(1.05); /* Slightly increase the button size on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    .choose-container {
+        padding: 20px; /* Reduced padding on smaller screens */
+        gap: 15px; /* Adjusted gap for smaller screens */
+    }
+    
+    .choose-container button {
+        font-size: 1rem; /* Adjusted font size for smaller screens */
+    }
 }
