@@ -9,14 +9,14 @@ export const Choose=()=>{
         <button onClick={async(e)=>{
             e.preventDefault();
             // await axios.post(`${process.env.REACT_APP_SERVER_URL}/bidder&issuer`,{ISSUER:process.env.REACT_APP_ISSUER})
-            nav('/');
+            nav('/home');
             
         }}>Issuer</button>
 
         <button onClick={async(e)=>{
                 e.preventDefault();
                 // await axios.post(`${process.env.REACT_APP_SERVER_URL}/bidder_issuer`,{BIDDER:process.env.REACT_APP_BIDDER})
-                nav('/');
+                nav('/home');
         }}>Bidder</button>
         </div>
     )
