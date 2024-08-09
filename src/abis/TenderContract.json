@@ -1,0 +1,970 @@
+[
+    {
+      "type": "event",
+      "name": "BidSubmitted",
+      "inputs": [
+        {
+          "type": "uint256",
+          "name": "tenderId",
+          "indexed": true,
+          "internalType": "uint256"
+        },
+        {
+          "type": "address",
+          "name": "bidder",
+          "indexed": true,
+          "internalType": "address"
+        },
+        {
+          "type": "uint256",
+          "name": "amount",
+          "indexed": false,
+          "internalType": "uint256"
+        }
+      ],
+      "outputs": [],
+      "anonymous": false
+    },
+    {
+      "type": "event",
+      "name": "BidWithdrawn",
+      "inputs": [
+        {
+          "type": "uint256",
+          "name": "tenderId",
+          "indexed": true,
+          "internalType": "uint256"
+        },
+        {
+          "type": "address",
+          "name": "bidder",
+          "indexed": true,
+          "internalType": "address"
+        }
+      ],
+      "outputs": [],
+      "anonymous": false
+    },
+    {
+      "type": "event",
+      "name": "BidderRated",
+      "inputs": [
+        {
+          "type": "address",
+          "name": "bidder",
+          "indexed": true,
+          "internalType": "address"
+        },
+        {
+          "type": "uint256",
+          "name": "rating",
+          "indexed": false,
+          "internalType": "uint256"
+        }
+      ],
+      "outputs": [],
+      "anonymous": false
+    },
+    {
+      "type": "event",
+      "name": "DeliveryConfirmed",
+      "inputs": [
+        {
+          "type": "uint256",
+          "name": "tenderId",
+          "indexed": true,
+          "internalType": "uint256"
+        }
+      ],
+      "outputs": [],
+      "anonymous": false
+    },
+    {
+      "type": "event",
+      "name": "IssuerRated",
+      "inputs": [
+        {
+          "type": "address",
+          "name": "issuer",
+          "indexed": true,
+          "internalType": "address"
+        },
+        {
+          "type": "uint256",
+          "name": "rating",
+          "indexed": false,
+          "internalType": "uint256"
+        }
+      ],
+      "outputs": [],
+      "anonymous": false
+    },
+    {
+      "type": "event",
+      "name": "PenaltyImposed",
+      "inputs": [
+        {
+          "type": "address",
+          "name": "bidder",
+          "indexed": true,
+          "internalType": "address"
+        },
+        {
+          "type": "uint256",
+          "name": "amount",
+          "indexed": false,
+          "internalType": "uint256"
+        }
+      ],
+      "outputs": [],
+      "anonymous": false
+    },
+    {
+      "type": "event",
+      "name": "ProfileCreated",
+      "inputs": [
+        {
+          "type": "address",
+          "name": "user",
+          "indexed": true,
+          "internalType": "address"
+        },
+        {
+          "type": "uint8",
+          "name": "userType",
+          "indexed": false,
+          "internalType": "enum tenderContract.UserType"
+        }
+      ],
+      "outputs": [],
+      "anonymous": false
+    },
+    {
+      "type": "event",
+      "name": "TenderCancelled",
+      "inputs": [
+        {
+          "type": "uint256",
+          "name": "tenderId",
+          "indexed": true,
+          "internalType": "uint256"
+        }
+      ],
+      "outputs": [],
+      "anonymous": false
+    },
+    {
+      "type": "event",
+      "name": "TenderClosed",
+      "inputs": [
+        {
+          "type": "uint256",
+          "name": "tenderId",
+          "indexed": true,
+          "internalType": "uint256"
+        },
+        {
+          "type": "address",
+          "name": "winningBidder",
+          "indexed": false,
+          "internalType": "address"
+        },
+        {
+          "type": "uint256",
+          "name": "winningBid",
+          "indexed": false,
+          "internalType": "uint256"
+        }
+      ],
+      "outputs": [],
+      "anonymous": false
+    },
+    {
+      "type": "event",
+      "name": "TenderCreated",
+      "inputs": [
+        {
+          "type": "uint256",
+          "name": "tenderId",
+          "indexed": true,
+          "internalType": "uint256"
+        },
+        {
+          "type": "address",
+          "name": "issuer",
+          "indexed": true,
+          "internalType": "address"
+        }
+      ],
+      "outputs": [],
+      "anonymous": false
+    },
+    {
+      "type": "event",
+      "name": "TenderSaved",
+      "inputs": [
+        {
+          "type": "uint256",
+          "name": "tenderId",
+          "indexed": true,
+          "internalType": "uint256"
+        },
+        {
+          "type": "address",
+          "name": "bidder",
+          "indexed": true,
+          "internalType": "address"
+        }
+      ],
+      "outputs": [],
+      "anonymous": false
+    },
+    {
+      "type": "event",
+      "name": "TenderUnsaved",
+      "inputs": [
+        {
+          "type": "uint256",
+          "name": "tenderId",
+          "indexed": true,
+          "internalType": "uint256"
+        },
+        {
+          "type": "address",
+          "name": "bidder",
+          "indexed": true,
+          "internalType": "address"
+        }
+      ],
+      "outputs": [],
+      "anonymous": false
+    },
+    {
+      "type": "function",
+      "name": "bidderRatings",
+      "inputs": [
+        {
+          "type": "address",
+          "name": "",
+          "internalType": "address"
+        }
+      ],
+      "outputs": [
+        {
+          "type": "uint256",
+          "name": "",
+          "internalType": "uint256"
+        }
+      ],
+      "stateMutability": "view"
+    },
+    {
+      "type": "function",
+      "name": "bidderSavedTenders",
+      "inputs": [
+        {
+          "type": "address",
+          "name": "",
+          "internalType": "address"
+        },
+        {
+          "type": "uint256",
+          "name": "",
+          "internalType": "uint256"
+        }
+      ],
+      "outputs": [
+        {
+          "type": "uint256",
+          "name": "",
+          "internalType": "uint256"
+        }
+      ],
+      "stateMutability": "view"
+    },
+    {
+      "type": "function",
+      "name": "bidderTenderHistory",
+      "inputs": [
+        {
+          "type": "address",
+          "name": "",
+          "internalType": "address"
+        },
+        {
+          "type": "uint256",
+          "name": "",
+          "internalType": "uint256"
+        }
+      ],
+      "outputs": [
+        {
+          "type": "uint256",
+          "name": "",
+          "internalType": "uint256"
+        }
+      ],
+      "stateMutability": "view"
+    },
+    {
+      "type": "function",
+      "name": "cancelTender",
+      "inputs": [
+        {
+          "type": "uint256",
+          "name": "tenderId",
+          "internalType": "uint256"
+        }
+      ],
+      "outputs": [],
+      "stateMutability": "nonpayable"
+    },
+    {
+      "type": "function",
+      "name": "closeTender",
+      "inputs": [
+        {
+          "type": "uint256",
+          "name": "tenderId",
+          "internalType": "uint256"
+        }
+      ],
+      "outputs": [],
+      "stateMutability": "nonpayable"
+    },
+    {
+      "type": "function",
+      "name": "confirmDelivery",
+      "inputs": [
+        {
+          "type": "uint256",
+          "name": "tenderId",
+          "internalType": "uint256"
+        }
+      ],
+      "outputs": [],
+      "stateMutability": "nonpayable"
+    },
+    {
+      "type": "function",
+      "name": "createProfile",
+      "inputs": [
+        {
+          "type": "uint8",
+          "name": "_userType",
+          "internalType": "enum tenderContract.UserType"
+        },
+        {
+          "type": "string",
+          "name": "_name",
+          "internalType": "string"
+        },
+        {
+          "type": "string",
+          "name": "_phone1",
+          "internalType": "string"
+        },
+        {
+          "type": "string",
+          "name": "_phone2",
+          "internalType": "string"
+        },
+        {
+          "type": "string",
+          "name": "_email",
+          "internalType": "string"
+        },
+        {
+          "type": "string",
+          "name": "_about",
+          "internalType": "string"
+        }
+      ],
+      "outputs": [],
+      "stateMutability": "nonpayable"
+    },
+    {
+      "type": "function",
+      "name": "createTender",
+      "inputs": [
+        {
+          "type": "string",
+          "name": "description",
+          "internalType": "string"
+        },
+        {
+          "type": "uint16",
+          "name": "year",
+          "internalType": "uint16"
+        },
+        {
+          "type": "uint8",
+          "name": "month",
+          "internalType": "uint8"
+        },
+        {
+          "type": "uint8",
+          "name": "day",
+          "internalType": "uint8"
+        },
+        {
+          "type": "uint8",
+          "name": "hour",
+          "internalType": "uint8"
+        },
+        {
+          "type": "uint8",
+          "name": "minute",
+          "internalType": "uint8"
+        },
+        {
+          "type": "uint8",
+          "name": "second",
+          "internalType": "uint8"
+        },
+        {
+          "type": "uint256",
+          "name": "minBidAmount",
+          "internalType": "uint256"
+        },
+        {
+          "type": "tuple[]",
+          "name": "milestones",
+          "components": [
+            {
+              "type": "uint256",
+              "name": "milestoneId",
+              "internalType": "uint256"
+            },
+            {
+              "type": "uint256",
+              "name": "amount",
+              "internalType": "uint256"
+            },
+            {
+              "type": "bool",
+              "name": "isCompleted",
+              "internalType": "bool"
+            }
+          ],
+          "internalType": "struct tenderContract.Milestone[]"
+        }
+      ],
+      "outputs": [],
+      "stateMutability": "nonpayable"
+    },
+    {
+      "type": "function",
+      "name": "creditScores",
+      "inputs": [
+        {
+          "type": "address",
+          "name": "",
+          "internalType": "address"
+        }
+      ],
+      "outputs": [
+        {
+          "type": "uint256",
+          "name": "",
+          "internalType": "uint256"
+        }
+      ],
+      "stateMutability": "view"
+    },
+    {
+      "type": "function",
+      "name": "getProfile",
+      "inputs": [
+        {
+          "type": "address",
+          "name": "_user",
+          "internalType": "address"
+        }
+      ],
+      "outputs": [
+        {
+          "type": "tuple",
+          "name": "",
+          "components": [
+            {
+              "type": "uint8",
+              "name": "userType",
+              "internalType": "enum tenderContract.UserType"
+            },
+            {
+              "type": "string",
+              "name": "name",
+              "internalType": "string"
+            },
+            {
+              "type": "string",
+              "name": "phone1",
+              "internalType": "string"
+            },
+            {
+              "type": "string",
+              "name": "phone2",
+              "internalType": "string"
+            },
+            {
+              "type": "string",
+              "name": "email",
+              "internalType": "string"
+            },
+            {
+              "type": "string",
+              "name": "about",
+              "internalType": "string"
+            }
+          ],
+          "internalType": "struct tenderContract.UserProfile"
+        }
+      ],
+      "stateMutability": "view"
+    },
+    {
+      "type": "function",
+      "name": "getTenderBids",
+      "inputs": [
+        {
+          "type": "uint256",
+          "name": "tenderId",
+          "internalType": "uint256"
+        }
+      ],
+      "outputs": [
+        {
+          "type": "tuple[]",
+          "name": "",
+          "components": [
+            {
+              "type": "uint256",
+              "name": "tenderId",
+              "internalType": "uint256"
+            },
+            {
+              "type": "address",
+              "name": "bidder",
+              "internalType": "address"
+            },
+            {
+              "type": "uint256",
+              "name": "amount",
+              "internalType": "uint256"
+            },
+            {
+              "type": "bool",
+              "name": "isWithdrawn",
+              "internalType": "bool"
+            }
+          ],
+          "internalType": "struct tenderContract.Bid[]"
+        }
+      ],
+      "stateMutability": "view"
+    },
+    {
+      "type": "function",
+      "name": "imposePenalty",
+      "inputs": [
+        {
+          "type": "address",
+          "name": "bidder",
+          "internalType": "address"
+        },
+        {
+          "type": "uint256",
+          "name": "amount",
+          "internalType": "uint256"
+        }
+      ],
+      "outputs": [],
+      "stateMutability": "nonpayable"
+    },
+    {
+      "type": "function",
+      "name": "issuerRatings",
+      "inputs": [
+        {
+          "type": "address",
+          "name": "",
+          "internalType": "address"
+        }
+      ],
+      "outputs": [
+        {
+          "type": "uint256",
+          "name": "",
+          "internalType": "uint256"
+        }
+      ],
+      "stateMutability": "view"
+    },
+    {
+      "type": "function",
+      "name": "nextMilestoneId",
+      "inputs": [],
+      "outputs": [
+        {
+          "type": "uint256",
+          "name": "",
+          "internalType": "uint256"
+        }
+      ],
+      "stateMutability": "view"
+    },
+    {
+      "type": "function",
+      "name": "nextTenderId",
+      "inputs": [],
+      "outputs": [
+        {
+          "type": "uint256",
+          "name": "",
+          "internalType": "uint256"
+        }
+      ],
+      "stateMutability": "view"
+    },
+    {
+      "type": "function",
+      "name": "profiles",
+      "inputs": [
+        {
+          "type": "address",
+          "name": "",
+          "internalType": "address"
+        }
+      ],
+      "outputs": [
+        {
+          "type": "uint8",
+          "name": "userType",
+          "internalType": "enum tenderContract.UserType"
+        },
+        {
+          "type": "string",
+          "name": "name",
+          "internalType": "string"
+        },
+        {
+          "type": "string",
+          "name": "phone1",
+          "internalType": "string"
+        },
+        {
+          "type": "string",
+          "name": "phone2",
+          "internalType": "string"
+        },
+        {
+          "type": "string",
+          "name": "email",
+          "internalType": "string"
+        },
+        {
+          "type": "string",
+          "name": "about",
+          "internalType": "string"
+        }
+      ],
+      "stateMutability": "view"
+    },
+    {
+      "type": "function",
+      "name": "rateBidder",
+      "inputs": [
+        {
+          "type": "address",
+          "name": "bidder",
+          "internalType": "address"
+        },
+        {
+          "type": "uint256",
+          "name": "rating",
+          "internalType": "uint256"
+        }
+      ],
+      "outputs": [],
+      "stateMutability": "nonpayable"
+    },
+    {
+      "type": "function",
+      "name": "rateIssuer",
+      "inputs": [
+        {
+          "type": "address",
+          "name": "issuer",
+          "internalType": "address"
+        },
+        {
+          "type": "uint256",
+          "name": "rating",
+          "internalType": "uint256"
+        }
+      ],
+      "outputs": [],
+      "stateMutability": "nonpayable"
+    },
+    {
+      "type": "function",
+      "name": "saveTender",
+      "inputs": [
+        {
+          "type": "uint256",
+          "name": "tenderId",
+          "internalType": "uint256"
+        }
+      ],
+      "outputs": [],
+      "stateMutability": "nonpayable"
+    },
+    {
+      "type": "function",
+      "name": "submitBid",
+      "inputs": [
+        {
+          "type": "uint256",
+          "name": "tenderId",
+          "internalType": "uint256"
+        }
+      ],
+      "outputs": [],
+      "stateMutability": "payable"
+    },
+    {
+      "type": "function",
+      "name": "tenderBids",
+      "inputs": [
+        {
+          "type": "uint256",
+          "name": "",
+          "internalType": "uint256"
+        },
+        {
+          "type": "uint256",
+          "name": "",
+          "internalType": "uint256"
+        }
+      ],
+      "outputs": [
+        {
+          "type": "uint256",
+          "name": "tenderId",
+          "internalType": "uint256"
+        },
+        {
+          "type": "address",
+          "name": "bidder",
+          "internalType": "address"
+        },
+        {
+          "type": "uint256",
+          "name": "amount",
+          "internalType": "uint256"
+        },
+        {
+          "type": "bool",
+          "name": "isWithdrawn",
+          "internalType": "bool"
+        }
+      ],
+      "stateMutability": "view"
+    },
+    {
+      "type": "function",
+      "name": "tenders",
+      "inputs": [
+        {
+          "type": "uint256",
+          "name": "",
+          "internalType": "uint256"
+        }
+      ],
+      "outputs": [
+        {
+          "type": "uint256",
+          "name": "id",
+          "internalType": "uint256"
+        },
+        {
+          "type": "string",
+          "name": "description",
+          "internalType": "string"
+        },
+        {
+          "type": "uint256",
+          "name": "minBidAmount",
+          "internalType": "uint256"
+        },
+        {
+          "type": "address",
+          "name": "issuer",
+          "internalType": "address"
+        },
+        {
+          "type": "uint256",
+          "name": "deadline",
+          "internalType": "uint256"
+        },
+        {
+          "type": "bool",
+          "name": "isCancelled",
+          "internalType": "bool"
+        },
+        {
+          "type": "bool",
+          "name": "isClosed",
+          "internalType": "bool"
+        },
+        {
+          "type": "uint256",
+          "name": "winningBid",
+          "internalType": "uint256"
+        },
+        {
+          "type": "address",
+          "name": "winningBidder",
+          "internalType": "address"
+        }
+      ],
+      "stateMutability": "view"
+    },
+    {
+      "type": "function",
+      "name": "toTimestamp",
+      "inputs": [
+        {
+          "type": "uint16",
+          "name": "year",
+          "internalType": "uint16"
+        },
+        {
+          "type": "uint8",
+          "name": "month",
+          "internalType": "uint8"
+        },
+        {
+          "type": "uint8",
+          "name": "day",
+          "internalType": "uint8"
+        },
+        {
+          "type": "uint8",
+          "name": "hour",
+          "internalType": "uint8"
+        },
+        {
+          "type": "uint8",
+          "name": "minute",
+          "internalType": "uint8"
+        },
+        {
+          "type": "uint8",
+          "name": "second",
+          "internalType": "uint8"
+        }
+      ],
+      "outputs": [
+        {
+          "type": "uint256",
+          "name": "timestamp",
+          "internalType": "uint256"
+        }
+      ],
+      "stateMutability": "pure"
+    },
+    {
+      "type": "function",
+      "name": "unsaveTender",
+      "inputs": [
+        {
+          "type": "uint256",
+          "name": "tenderId",
+          "internalType": "uint256"
+        }
+      ],
+      "outputs": [],
+      "stateMutability": "nonpayable"
+    },
+    {
+      "type": "function",
+      "name": "updateCreditScore",
+      "inputs": [
+        {
+          "type": "address",
+          "name": "contractor",
+          "internalType": "address"
+        },
+        {
+          "type": "uint256",
+          "name": "newScore",
+          "internalType": "uint256"
+        }
+      ],
+      "outputs": [],
+      "stateMutability": "nonpayable"
+    },
+    {
+      "type": "function",
+      "name": "viewBidHistory",
+      "inputs": [],
+      "outputs": [
+        {
+          "type": "tuple[]",
+          "name": "",
+          "components": [
+            {
+              "type": "uint256",
+              "name": "tenderId",
+              "internalType": "uint256"
+            },
+            {
+              "type": "address",
+              "name": "bidder",
+              "internalType": "address"
+            },
+            {
+              "type": "uint256",
+              "name": "amount",
+              "internalType": "uint256"
+            },
+            {
+              "type": "bool",
+              "name": "isWithdrawn",
+              "internalType": "bool"
+            }
+          ],
+          "internalType": "struct tenderContract.Bid[]"
+        }
+      ],
+      "stateMutability": "view"
+    },
+    {
+      "type": "function",
+      "name": "viewSavedTenders",
+      "inputs": [],
+      "outputs": [
+        {
+          "type": "uint256[]",
+          "name": "",
+          "internalType": "uint256[]"
+        }
+      ],
+      "stateMutability": "view"
+    },
+    {
+      "type": "function",
+      "name": "withdrawBid",
+      "inputs": [
+        {
+          "type": "uint256",
+          "name": "tenderId",
+          "internalType": "uint256"
+        }
+      ],
+      "outputs": [],
+      "stateMutability": "nonpayable"
+    }
+  ]

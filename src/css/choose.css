@@ -4,7 +4,6 @@
     align-items: center;
     height: 100%;
     width: 100%;
-    flex-direction: column;
     gap: 10px;
     background-color:azure;
 }
@@ -17,6 +16,9 @@
     border-radius: 5px;
     font-size: 18px;
     cursor: pointer;
+    font-weight: bold;
+    transition: .3s;
+    margin: 1rem;
 }
 
 .choose-container button:hover{

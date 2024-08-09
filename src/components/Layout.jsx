@@ -1,7 +1,7 @@
 import { Link, Outlet, useNavigate } from "react-router-dom"
 import '../css/layout.css'
 import { useEffect } from "react";
-// import axios from "axios";
+import { ethers } from "ethers";
 
 export const Layout=()=>{
     const nav=useNavigate();
@@ -28,7 +28,7 @@ export const Layout=()=>{
       if (window.ethereum) {
         try {
           await window.ethereum.request({ method: 'eth_requestAccounts' });
-        
+          
          } catch (error) {
               console.error('User denied access to MetaMask:', error);
             }
