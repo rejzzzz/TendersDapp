@@ -1,0 +1,36 @@
+/* Sticky navigation bar */
+nav {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333; /* Darker background for better contrast */
+    color: white;
+    padding: 1rem 1.5rem; /* Increased horizontal padding for better spacing */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3); /* Softer shadow for a more subtle effect */
+    z-index: 1000;
+  }
+  
+  /* Navigation links styling */
+  nav a {
+    color: white;
+    text-decoration: none;
+    letter-spacing: 1px; /* Reduced spacing for a more compact look */
+    font-size: 16px; /* Slightly larger font size for better readability */
+    font-weight: 600; /* Slightly lighter weight for a modern look */
+    transition: color 0.3s ease; /* Smooth transition for hover effect */
+  }
+  
+  nav a:hover {
+    color: #00aaff; /* Changed hover color to a brighter shade for better visibility */
+  }
+  
+  /* Logo styling */
+  .logo {
+    font-size: 28px; /* Increased font size for better prominence */
+    font-weight: 700; /* Bold weight for a strong visual impact */
+    letter-spacing: 1px; /* Adjusted letter spacing for logo text */
+  }
+  

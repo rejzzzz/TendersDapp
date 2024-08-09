@@ -1,0 +1,57 @@
+/* Home page styling */
+.home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between; /* Space between content and button */
+    height: 100vh; /* Full viewport height */
+    width: 100vw; /* Full viewport width */
+    background: #121212; /* Dark background for modern look */
+    color: #e0e0e0; /* Light text color for contrast */
+    padding: 2rem; /* Padding for spacing */
+    box-sizing: border-box; /* Ensures padding is included in total width/height */
+}
+
+/* Container for content */
+.content-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex: 1; /* Take up available space */
+}
+
+/* Heading styling */
+.home h2 {
+    color: #69eafb; /* Vibrant color for heading */
+    font-size: 4rem; /* Larger font size for emphasis */
+    margin-top: 1px;
+    margin-bottom: 2rem; /* Margin for spacing */
+}
+
+/* Paragraph styling */
+.home p {
+    max-width: 600px; /* Max width for better readability */
+    line-height: 1.6; /* Increased line height for readability */
+    margin: 0 auto; /* Center horizontally */
+}
+
+/* Button styling */
+.home button {
+    background-color: #333; /* Darker background color for a modern look */
+    color: #fff; /* Light text color */
+    padding: 12px 24px; /* Increased padding for a more prominent button */
+    border: none;
+    border-radius: 6px; /* Slightly larger border radius for a modern button */
+    font-size: 1rem; /* Consistent font size */
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transition for hover effect */
+}
+
+/* Hover effect for buttons */
+.home button:hover {
+    background-color: #00bcd4; /* Vibrant blue color on hover */
+    transform: scale(1.05); /* Slightly increase button size on hover */
+}
+
